@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.component-row:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.component-row--credit-cards {
+  display: flex;
+}
+
+.component-row--credit-cards > *:not(:last-child) {
+  margin-right: 20px;
+}

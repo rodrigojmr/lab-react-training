@@ -1,0 +1,8 @@
+.greeting {
+  padding: 1rem 2rem;
+  border: 2px solid black;
+}
+
+.greeting:not(:last-child) {
+  margin-bottom: 1rem;
+}
