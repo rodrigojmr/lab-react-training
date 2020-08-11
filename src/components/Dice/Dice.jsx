@@ -7,7 +7,7 @@ class Dice extends React.Component {
     this.state = {
       rolling: false,
       likes: 0,
-      dice: `/img/dice${Math.round(Math.random() * (6 - 1) + 1)}.png`,
+      dice: `/img/dice${Math.ceil(Math.random() * 6)}.png`,
     };
     this.emptyDice = '/img/dice-empty.png';
   }
@@ -20,7 +20,7 @@ class Dice extends React.Component {
       });
       setTimeout(() => {
         this.setState({
-          dice: `/img/dice${Math.round(Math.random() * (6 - 1) + 1)}.png`,
+          dice: `/img/dice${Math.ceil(Math.random() * 6)}.png`,
           rolling: false,
         });
       }, 1000);
