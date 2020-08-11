@@ -1,9 +1,8 @@
-.dice {
-  width: 300px;
-  margin: 0 auto;
+.carousel {
+  display: flex;
+  justify-content: center;
 }
 
-.dice__img {
-  width: 100%;
-  height: auto;
+.carousel__button {
+  align-self: center;
 }
