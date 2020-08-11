@@ -5,6 +5,7 @@ import Greeting from './components/Greeting/Greeting';
 import Random from './components/Random/Random';
 import BoxColor from './components/BoxColor/BoxColor';
 import CreditCard from './components/Credit Card/CreditCard';
+import Rating from './components/Rating/Rating';
 
 function App() {
   return (
@@ -63,6 +64,10 @@ function App() {
           bgColor="#ddbb55"
           color="white"
         />
+      </div>
+      <div className="component-row">
+        <Rating>4</Rating>
+        <Rating>2</Rating>
       </div>
     </div>
   );
