@@ -2,7 +2,7 @@ import React from 'react';
 import './Rating.css';
 
 const Rating = (props) => {
-  const roundNumber = Math.round(props.children);
+  const roundNumber = Math.round(parseFloat(props.children));
 
   let stars = [];
 

@@ -1,0 +1,9 @@
+.clickable-picture {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.clickable-picture img {
+  width: 100%;
+  height: auto;
+}

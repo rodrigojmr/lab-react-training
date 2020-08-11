@@ -1,0 +1,31 @@
+.credit-card {
+  padding: 0.75rem;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.credit-card .type {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.credit-card .type__img {
+  height: 20px;
+  width: auto;
+}
+
+.credit-card .number {
+  padding: 10px 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+.credit-card .expires-bank,
+.credit-card .owner {
+  display: flex;
+  align-content: flex-start;
+}
+
+.credit-card .expires-bank span:first-child {
+  margin-right: 15px;
+}

@@ -1,0 +1,9 @@
+.dice {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.dice__img {
+  width: 100%;
+  height: auto;
+}
