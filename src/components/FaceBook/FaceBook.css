@@ -1,0 +1,21 @@
+.facebook .id-card {
+  height: 200px;
+}
+
+.facebook .id-card:not(:last-child) {
+  margin-bottom: 20px;
+}
+.facebook .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.facebook .buttons button {
+  background-color: white;
+  padding: 5px 10px;
+  border: 1px solid grey;
+}
+
+.facebook .buttons button:not(:last-child) {
+  margin-right: 10px;
+}

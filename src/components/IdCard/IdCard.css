@@ -6,4 +6,13 @@
 
 .id-card__img {
   align-self: flex-start;
+  height: 100%;
+  width: auto;
+}
+
+.id-card__info {
+  font-size: 1.4rem;
+  align-self: center;
+  margin-left: 20px;
+  text-align: left;
 }

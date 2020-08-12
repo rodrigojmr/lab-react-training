@@ -48,3 +48,11 @@
 .component-row--credit-cards > *:not(:last-child) {
   margin-right: 20px;
 }
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

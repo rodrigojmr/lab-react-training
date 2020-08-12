@@ -1,7 +1,16 @@
 import React from 'react';
 import './IdCard.css';
 
-const IdCard = ({ lastName, firstName, gender, height, birth, picture }) => {
+const IdCard = ({
+  lastName,
+  firstName,
+  gender,
+  height,
+  birth,
+  picture,
+  type,
+  country,
+}) => {
   const Days = [
     'Sunday',
     'Monday',
@@ -27,6 +36,51 @@ const IdCard = ({ lastName, firstName, gender, height, birth, picture }) => {
     'December',
   ];
 
+  let heightInfo, typeInfo, birthInfo, countryInfo, genderInfo;
+
+  if (height) {
+    heightInfo = (
+      <p>
+        <strong>Height: </strong>
+        {height + 'm'}
+      </p>
+    );
+  }
+  if (birth) {
+    birthInfo = (
+      <p>
+        <strong>Birth name: </strong>
+        {`${Days[birth.getDay()]} ${
+          Months[birth.getMonth()]
+        } ${birth.getDate()} ${birth.getFullYear()}`}
+      </p>
+    );
+  }
+  if (type) {
+    typeInfo = (
+      <p>
+        <strong>Type: </strong>
+        {type}
+      </p>
+    );
+  }
+  if (gender) {
+    genderInfo = (
+      <p>
+        <strong>Gender: </strong>
+        {gender}
+      </p>
+    );
+  }
+  if (country) {
+    countryInfo = (
+      <p>
+        <strong>Country: </strong>
+        {country}
+      </p>
+    );
+  }
+
   return (
     <div className="id-card">
       <img
@@ -43,20 +97,11 @@ const IdCard = ({ lastName, firstName, gender, height, birth, picture }) => {
           <strong>Last name: </strong>
           {lastName}
         </p>
-        <p>
-          <strong>Gender: </strong>
-          {gender}
-        </p>
-        <p>
-          <strong>Height: </strong>
-          {height + 'm'}
-        </p>
-        <p>
-          <strong>Birth name: </strong>
-          {`${Days[birth.getDay()]} ${
-            Months[birth.getMonth()]
-          } ${birth.getDate()} ${birth.getFullYear()}`}
-        </p>
+        {genderInfo}
+        {heightInfo}
+        {countryInfo}
+        {typeInfo}
+        {birthInfo}
       </div>
     </div>
   );

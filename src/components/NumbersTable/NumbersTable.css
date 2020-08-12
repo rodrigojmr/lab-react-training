@@ -1,0 +1,14 @@
+.table {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.table__item {
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: black;
+  border: 1px solid black;
+}
