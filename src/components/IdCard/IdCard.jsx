@@ -10,6 +10,7 @@ const IdCard = ({
   picture,
   type,
   country,
+  selected,
 }) => {
   const Days = [
     'Sunday',
@@ -84,6 +85,9 @@ const IdCard = ({
   return (
     <div className="id-card">
       <img
+        style={{
+          backgroundColor: selected ? 'lightblue' : 'initial',
+        }}
         src={picture}
         alt={{ firstName } + ' ' + { lastName } + `'s Icon`}
         className="id-card__img"

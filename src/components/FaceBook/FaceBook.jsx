@@ -4,24 +4,45 @@ import profiles from './../../data/berlin.json';
 import IdCard from './../IdCard/IdCard';
 
 class FaceBook extends React.Component {
-  // filterCountry = (country) => {
-  //   const elementsToHighlight = profileElements.filter(profile)
-  // };
+  constructor() {
+    super();
+    this.state = {
+      country: undefined,
+    };
+  }
+
+  filterProfiles = (country) => {
+    this.setState({
+      country,
+    });
+  };
 
   render() {
-    const countries = profiles.map((profile) => profile.country);
-    const uniqueCountries = countries
-      .filter((item, index) => {
-        return countries.indexOf(item) === index;
+    const countries = profiles
+      .map((profile) => profile.country)
+      .filter((item, index, originalArray) => {
+        return originalArray.indexOf(item) === index;
       })
       .sort();
-    const countryButtons = uniqueCountries.map((country) => {
-      return <button onClick={this.filterCountry(country)}>{country}</button>;
+    const countryButtons = countries.map((country) => {
+      return (
+        <button
+          key={country}
+          onClick={() => this.filterProfiles(country)}
+          style={{
+            backgroundColor:
+              this.state.country === country ? 'lightblue' : 'initial',
+          }}
+        >
+          {country}
+        </button>
+      );
     });
 
     const profileElements = profiles.map((profile) => {
       return (
         <IdCard
+          selected={profile.country === this.state.country}
           key={`${profile.firstName} ${profile.lastName}`}
           picture={profile.img}
           firstName={profile.firstName}
@@ -34,7 +55,15 @@ class FaceBook extends React.Component {
     return (
       <div className="facebook">
         <div className="buttons">
-          <button onClick={this.filterCountry('all')}>All</button>
+          <button
+            onClick={() => this.filterProfiles()}
+            style={{
+              backgroundColor:
+                this.state.country === undefined ? 'lightblue' : 'initial',
+            }}
+          >
+            All
+          </button>
           {countryButtons}
         </div>
         {profileElements}
